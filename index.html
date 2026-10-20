@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Career Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fa9a92;--ink:#1E1A3C;--mut:#5d5883;--card:#fff;--line:#d9d2ff;--vi:#6D3BF2;--sun:#FFC83D;--mint:#1FB394;--co:#FF6B6B;--ok:#e3f8f1;--no:#fff0f0;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15112e;--ink:#f1eeff;--mut:#b2abdd;--card:#221c47;--line:#3b3270;--ok:#12352f;--no:#40222b}}
+:root[data-theme="dark"]{--bg:#15112e;--ink:#f1eeff;--mut:#b2abdd;--card:#221c47;--line:#3b3270;--ok:#12352f;--no:#40222b}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:
+  radial-gradient(ellipse at 12% 8%,rgba(255,255,255,.78) 0,rgba(255,255,255,0) 28%),
+  radial-gradient(ellipse at 88% 18%,rgba(255,200,61,.32) 0,rgba(255,200,61,0) 30%),
+  radial-gradient(ellipse at 80% 88%,rgba(31,179,148,.22) 0,rgba(31,179,148,0) 30%),
+  linear-gradient(135deg,#ffd2cc 0%,#f6b4ed 38%,#c9baff 72%,#b9f0e2 100%);
+  background-attachment:fixed;color:var(--ink);font:400 17px/1.55 Figtree,system-ui,sans-serif;min-height:100vh;position:relative}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background:linear-gradient(120deg,rgba(255,255,255,.25),transparent 42%,rgba(255,255,255,.12));
+}
+@media (prefers-color-scheme:dark){body{background:
+  radial-gradient(ellipse at 12% 8%,rgba(109,59,242,.22),transparent 30%),
+  radial-gradient(ellipse at 88% 18%,rgba(255,200,61,.10),transparent 30%),
+  linear-gradient(135deg,#17112f 0%,#28204c 52%,#153c43 100%);background-attachment:fixed}}
+:root[data-theme="dark"] body{background:
+  radial-gradient(ellipse at 12% 8%,rgba(109,59,242,.22),transparent 30%),
+  radial-gradient(ellipse at 88% 18%,rgba(255,200,61,.10),transparent 30%),
+  linear-gradient(135deg,#17112f 0%,#28204c 52%,#153c43 100%);background-attachment:fixed}
+:root[data-theme="light"] body{background:
+  radial-gradient(ellipse at 12% 8%,rgba(255,255,255,.78) 0,rgba(255,255,255,0) 28%),
+  radial-gradient(ellipse at 88% 18%,rgba(255,200,61,.32) 0,rgba(255,200,61,0) 30%),
+  radial-gradient(ellipse at 80% 88%,rgba(31,179,148,.22) 0,rgba(31,179,148,0) 30%),
+  linear-gradient(135deg,#ffd2cc 0%,#f6b4ed 38%,#c9baff 72%,#b9f0e2 100%);background-attachment:fixed}
+h1,h2,h3{font-family:"Bricolage Grotesque",Georgia,sans-serif;line-height:1.1;margin:0}
+main{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+.logo{font:800 20px "Bricolage Grotesque",sans-serif;display:flex;gap:8px;align-items:center}
+.logo i{width:26px;height:26px;border-radius:8px 8px 8px 2px;background:var(--vi);display:inline-block;transform:rotate(-8deg)}
+button{font:inherit;cursor:pointer;color:inherit}
+button:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.btn{background:linear-gradient(135deg,#7b45ff 0%,#5a2be2 48%,#ff5eae 100%);color:#fff;border:3px solid rgba(255,255,255,.9);border-radius:20px;padding:15px 28px;font-weight:800;letter-spacing:.01em;box-shadow:0 7px 0 #3e209f,0 14px 28px rgba(83,45,188,.28),inset 0 2px 0 rgba(255,255,255,.35);transition:transform .16s ease,box-shadow .16s ease,filter .16s ease}
+.btn:hover{transform:translateY(-3px) rotate(-1deg) scale(1.025);filter:saturate(1.15);box-shadow:0 10px 0 #3e209f,0 20px 32px rgba(83,45,188,.32),inset 0 2px 0 rgba(255,255,255,.4)}
+.btn:active{transform:translateY(4px) scale(.99);box-shadow:0 2px 0 #3e209f}
+.hero #go{display:inline-flex;align-items:center;gap:12px;position:relative;isolation:isolate;overflow:hidden;
+  padding:21px 34px;font-size:clamp(20px,4vw,25px);border-radius:24px;
+  box-shadow:0 9px 0 #3e209f,0 18px 34px rgba(83,45,188,.3),inset 0 2px 0 rgba(255,255,255,.4)}
+.hero #go::before{content:"✦";font-size:1.25em;color:#ffe36b;text-shadow:0 2px 0 rgba(0,0,0,.12)}
+.hero #go::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,transparent 15%,rgba(255,255,255,.35) 48%,transparent 70%);transform:translateX(-120%);transition:transform .5s ease}
+.hero #go:hover::after{transform:translateX(120%)}
+.hero #go:hover{transform:translateY(-4px) rotate(-1.5deg) scale(1.035)}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 #4a24b8}
+.ghost{background:none;border:2px solid var(--line);border-radius:12px;padding:8px 14px;font-size:14px}
+.hero h1{font-size:clamp(40px,9vw,72px);font-weight:800;letter-spacing:-.02em;margin:18px 0 14px}
+.hero p{max-width:52ch;color:var(--mut);margin:0 0 26px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:34px 0 0}
+.chip{border:2px solid var(--ink);border-radius:99px;padding:6px 14px;font-weight:600;font-size:15px;background:var(--card)}
+.chip:nth-child(1){background:var(--sun);color:#1E1A3C}.chip:nth-child(3){background:var(--mint);color:#06241d}.chip:nth-child(5){background:var(--co);color:#2b0a0a}
+.prog{display:flex;gap:6px;margin-bottom:22px}.prog b{flex:1;height:8px;border-radius:9px;background:var(--line)}.prog b.on{background:var(--vi)}
+.job{display:inline-block;background:var(--sun);color:#1E1A3C;border-radius:8px;padding:3px 12px;font-weight:600;font-size:15px;margin-bottom:12px}
+.q h2{font-size:clamp(26px,5vw,36px);margin-bottom:12px}
+.scene{position:relative;background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(250,247,255,.96));color:#211944;
+  border:3px solid #6d3bf2;border-left:10px solid #ff6b6b;border-radius:20px;padding:24px 22px 20px;
+  margin:22px 0 22px;box-shadow:0 10px 0 rgba(70,43,150,.12),0 18px 34px rgba(52,35,113,.12),inset 0 1px 0 #fff}
+.scene::before{content:"YOUR QUEST";display:inline-block;background:linear-gradient(90deg,#6d3bf2,#a24cff);color:#fff;
+  font:800 12px/1 "Bricolage Grotesque",sans-serif;letter-spacing:.12em;border-radius:999px;padding:8px 12px;margin-bottom:12px;
+  box-shadow:0 3px 0 rgba(55,31,135,.2)}
+.scene table{color:#211944}
+.scene td,.scene th{border-bottom:1px solid #d9d2ff;padding:6px 8px;text-align:left}
+.q h2{font-size:clamp(28px,5.5vw,39px);margin-bottom:14px;letter-spacing:-.015em}
+.opt{font-size:16px;line-height:1.5;background:rgba(255,255,255,.94);color:#211944;border:2px solid #d2c8ff;border-radius:16px;padding:16px 18px;transition:border-color .15s,transform .15s,box-shadow .15s}
+.opt:hover:not(:disabled){border-color:var(--vi);transform:translateX(4px);box-shadow:0 5px 0 rgba(109,59,242,.12)}
+.opt.pick{opacity:1;border-color:var(--vi);border-width:3px;background:#f0eaff}
+.scene table{border-collapse:collapse;margin-top:10px;width:100%;max-width:420px}.scene td,.scene th{border-bottom:1px solid var(--line);padding:4px 8px;text-align:left}
+.opts{display:grid;gap:10px}
+.opt{text-align:left;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:14px 16px;transition:border-color .15s,transform .15s}
+.opt:hover:not(:disabled){border-color:var(--vi);transform:translateX(4px)}
+.opt:disabled{cursor:default;opacity:.75}.opt.pick{opacity:1;border-color:var(--vi);border-width:3px}
+.fb{margin-top:18px;border-radius:16px;padding:18px 20px;animation:pop .35s ease}
+@keyframes pop{from{transform:scale(.96);opacity:0}}
+.fb.good{background:var(--ok)}.fb.bad{background:var(--no)}
+.fb h3{font-size:22px;margin-bottom:6px}.fb .sc{font:800 40px "Bricolage Grotesque";letter-spacing:-.03em}
+.fb p{margin:6px 0}.fb .btn{margin-top:12px}
+.res h1{font-size:clamp(30px,6vw,46px);margin:0 0 6px}.res>p{color:var(--mut);margin:0 0 28px}
+.stage{perspective:900px;display:flex;justify-content:center;margin:20px 0 40px}
+.pc{width:min(100%,380px);border-radius:26px;padding:5px;background:conic-gradient(from var(--a,0deg),#ffc83d,#ff6b6b,#6d3bf2,#1fb394,#ffc83d);transition:transform .15s;box-shadow:0 24px 50px -18px rgba(109,59,242,.6);animation:spin 7s linear infinite;transform-style:preserve-3d}
+@property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
+@keyframes spin{to{--a:360deg}}
+.pi{border-radius:22px;background:linear-gradient(160deg,#241a5e,#3a1f8f 60%,#5a2bd0);color:#fff;padding:24px 22px;text-align:center}
+.pi .em{font-size:78px;line-height:1.1;filter:drop-shadow(0 6px 0 rgba(0,0,0,.25))}
+.pi .ar{font:800 32px/1.05 "Bricolage Grotesque";margin:6px 0 4px}
+.pi .cr{display:inline-block;background:var(--sun);color:#1E1A3C;font-weight:600;border-radius:99px;padding:4px 16px;margin:6px 0 12px}
+.pi .tg{font-size:15px;opacity:.9;margin:0 0 16px}
+.bars{text-align:left;display:grid;gap:7px;font-size:14px}
+.bar{display:grid;grid-template-columns:118px 1fr 28px;gap:8px;align-items:center}
+.bar span:nth-child(2){height:9px;border-radius:9px;background:rgba(255,255,255,.2);overflow:hidden}
+.bar em{display:block;height:100%;background:var(--sun);border-radius:9px;transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.pi .tags{margin-top:16px;font-size:13px;opacity:.85}
+.sec{margin:0 0 34px}.sec h2{font-size:28px;margin-bottom:12px}
+.row{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:12px 16px;margin-bottom:10px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.row small{color:var(--mut);display:block}.pct{font:800 24px "Bricolage Grotesque";color:var(--vi)}
+.badge{font-size:26px}
+.nx{background:var(--sun);color:#1E1A3C;border-radius:18px;padding:20px 22px}.nx h2{margin-bottom:6px}.nx p{margin:0}
+.acts{display:flex;gap:10px;flex-wrap:wrap}
+@media(max-width:480px){main{padding:18px 15px 48px}.hero #go{width:100%;justify-content:center;padding:19px 18px}.scene{padding:20px 16px}.opt{padding:14px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+<div class="top"><div class="logo"><i></i>Career Quest</div><div class="acts"><button class="ghost" id="lg" aria-label="Change language">Bahasa Melayu</button><button class="ghost" id="th" aria-label="Toggle light or dark theme">Theme</button></div></div>
+<div id="app"></div>
+</main>
+<script>
+const SK={AN:"Analytical Thinking",PS:"Problem Solving",CM:"Communication",CR:"Creativity",EM:"Empathy & Teamwork",OR:"Organisation"};
+// option: [text, primary score (1-5), secondary score (1-5), explanation]
+const Q=[
+{job:"Sales Analyst",t:"The Sales Sleuth",p:"AN",s:"OR",sc:"Your manager shares last half-year sales and asks: “Which month sold the most, and what should we look into?”",tbl:[["Jan",120],["Feb",95],["Mar",140],["Apr",180],["May",160],["Jun",175]],o:[
+["April sold the most (180). Sales then dipped in May, so I would check what happened in April and why May fell.",5,5,"You read the data correctly and spotted the follow-up question the numbers raise."],
+["June is the best month because it is the latest figure.",1,1,"Recent is not the same as highest. Always compare every value before you decide."],
+["March, because it had the biggest jump from the month before.",2,3,"The biggest jump is a real pattern, but the question asked for the highest month, which is April."],
+["April sold the most (180). That is all the data shows.",3,2,"Correct answer, but a good analyst also asks what the pattern means, such as the May dip."]]},
+{job:"Operations Planner",t:"The Morning Rush",p:"PS",s:"AN",sc:"A café has a 15-minute queue every morning at 8am. Three baristas are working. The owner asks you to fix it.",o:[
+["Hire two more baristas straight away.",2,2,"Maybe, but it is costly and you do not yet know that staff is the bottleneck."],
+["Watch one rush and time each step (ordering, making, paying) to find where the delay really is.",5,5,"Great. Find the real cause with evidence first, then choose a fix."],
+["Raise prices so fewer people come.",1,1,"This removes customers instead of solving the problem."],
+["Ask customers to come later in the morning.",2,3,"It might help a little, but it pushes the problem onto customers."]]},
+{job:"Customer Support Agent",t:"The Late Parcel",p:"CM",s:"EM",sc:"A customer messages: “My parcel is two weeks late and nobody replies to me! This is ridiculous.”",o:[
+["“The delay is the courier’s fault, not ours.”",2,1,"It may be true, but it sounds defensive and does not help the customer."],
+["“I am sorry, that is frustrating. I have checked your order, and I will send you an update by 5pm today.”",5,5,"Acknowledge the feeling, take ownership, and give a clear next step with a time."],
+["“Here is a full refund,” sent before checking anything.",3,3,"Kind, but a refund without checking may not be what the customer needs."],
+["Send the standard “we are experiencing delays” template.",1,1,"Generic replies make upset people feel ignored."]]},
+{job:"Campaign Creator",t:"The Phone Drawer",p:"CR",s:"CM",sc:"Most teenagers have old phones in a drawer at home. Create a campaign to get them recycled.",o:[
+["A poster that says “Please recycle your phone!”",1,2,"Clear, but it gives nobody a reason to act."],
+["A school challenge called “Drawer-to-Drop”: classes race to collect old phones, with a live leaderboard.",5,5,"Original and fun. It turns a chore into a game teens want to join."],
+["Copy a recycling advert you saw online.",2,2,"Borrowed ideas rarely feel fresh. Start from your own audience."],
+["Give 5% discount coupons.",3,3,"A sensible reward, but not very imaginative."]]},
+{job:"Team Member",t:"The Silent Teammate",p:"EM",s:"CM",sc:"In a group project, one teammate has done nothing and the deadline is in three days.",o:[
+["Do their part yourself and say nothing.",2,1,"It saves the deadline but hides the problem and leaves you burnt out."],
+["Message the teacher straight away.",2,2,"Sometimes needed, but talking to your teammate first is fairer and often faster."],
+["Message them privately, ask what is blocking them, and agree a smaller task they can finish.",5,5,"You listened first, then made a clear plan together."],
+["Remove their name from the project.",1,1,"This is punishing, not solving. It damages trust."]]},
+{job:"Event Coordinator",t:"The School Fair",p:"OR",s:"PS",sc:"The school fair is on Saturday. It is Wednesday. Tasks: recruit volunteers (3 days), book the hall (2 days), print posters (1 day), buy snacks (half a day, but you need the volunteer count first).",o:[
+["Buy snacks first because it is the easiest.",1,1,"Snacks depend on the volunteer count, so this guarantees waste or a shortage."],
+["Start the slowest tasks first (volunteers, hall), then posters, and buy snacks last.",5,5,"You sequenced by lead time and dependencies. That is real planning."],
+["Do posters first because they are the most visible.",2,2,"Visible is not the same as urgent. The slowest tasks needed to start already."],
+["Do the tasks in the order they were listed.",3,2,"Simple, but it ignores how long each task takes."]]},
+{job:"Survey Analyst",t:"The Canteen Poll",p:"AN",s:"CM",sc:"Your class voted for the new canteen drinks: Milo 18 votes, Teh Ais 12, Sirap Bandung 9, Plain Water 6. The canteen can only stock two drinks. Which do you recommend?",o:[
+["Sirap Bandung and Plain Water, because fewer people chose them so the queues will be shorter.",1,1,"Fewer votes means fewer buyers. The numbers point the other way."],
+["Milo only, because it won.",3,2,"Milo did win, but the canteen can stock two drinks, and the data shows which second one to pick."],
+["Milo and Teh Ais, the top two votes (30 out of 45). I would also check whether other classes agree.",5,5,"You used the numbers to decide and thought about whether the sample is big enough."],
+["Milo and Teh Ais, because I like them.",2,2,"The right pair, but for the wrong reason. Decide with the data, not your own taste."]]},
+{job:"Tech Helper",t:"The Dead Computers",p:"PS",s:"AN",sc:"Tomorrow your class needs the computer lab, but 5 out of 20 computers will not turn on. The teacher asks you to help.",o:[
+["Restart the 5 computers again and again until one works.",2,2,"Repeating the same thing rarely helps. Change something and see what happens."],
+["Tell the teacher the lab cannot be used tomorrow.",2,3,"Honest, but it gives up before looking for the cause."],
+["Ask for all 20 computers to be replaced.",1,1,"Very costly, and 15 of them work fine."],
+["Check what the 5 have in common (same row, same power strip, same cable) and test that first.",5,5,"You looked for a pattern to find the cause, then fix it. That is how engineers troubleshoot."]]},
+{job:"Peer Tutor",t:"The Lost Junior",p:"CM",s:"EM",sc:"A younger student asks you to explain photosynthesis. They look completely lost.",o:[
+["Say “It is easy, you will understand it later.”",1,2,"This makes the student feel silly and teaches them nothing."],
+["Explain it with all the technical words so nothing is missed.",2,3,"Accurate, but too much at once is confusing for a beginner."],
+["Read the textbook definition out loud again.",1,1,"If the first reading did not work, the same words will not work a second time."],
+["Compare it to cooking: the plant “cooks” its food using sunlight. Then ask them to explain it back to you.",5,5,"You used a simple example, then checked their understanding. That is great teaching."]]},
+{job:"Content Creator",t:"The Sleepy Assembly",p:"CR",s:"CM",sc:"The school wants students to remember a 5-minute road-safety message at assembly, but everyone usually falls asleep.",o:[
+["Read the safety rules slowly from a list.",1,1,"This is exactly what makes assemblies sleepy."],
+["Show the same slides used last year.",2,2,"Familiar slides will not catch anyone’s attention."],
+["Play loud music and hope people listen.",3,2,"It wakes people up, but the message is lost."],
+["Have students perform a 60-second skit of a “what not to do” road crossing, then ask the audience to spot the mistakes.",5,5,"Fun, memorable, and it makes the audience take part instead of just listening."]]},
+{job:"Student Mentor",t:"The New Classmate",p:"EM",s:"CM",sc:"A new student has started in your class. At recess, they are sitting alone.",o:[
+["Feel sorry for them but wait for them to come to you.",2,2,"Caring, but a new student often needs someone to make the first move."],
+["Ask the teacher to find them a friend.",3,3,"A fair step, but a friendly hello from you means more."],
+["Invite them to sit with your group, ask about their old school, and introduce them to one or two people.",5,5,"You made them feel welcome and helped them connect with others."],
+["Leave them alone, some people like being on their own.",1,1,"Maybe, but you do not know yet. A simple invitation costs nothing."]]},
+{job:"Study Planner",t:"The Exam Week",p:"OR",s:"PS",sc:"You have 4 exams in the next 10 days. You also have football training twice a week and a family event on Saturday.",o:[
+["Study the subjects you enjoy until the day before the exams.",2,1,"The hardest subjects will be left with the least time."],
+["Study each subject once, in the order of the exams.",3,2,"A start, but it ignores which subjects need more time."],
+["Study all night before each exam.",1,1,"Tired brains remember less, and it leaves no room for the rest of your life."],
+["Make a timetable: list each subject, give more time to the hardest, block in training and the family event, and add a rest day.",5,5,"You planned around everything in your week, not just studying. That is real organisation."]]}
+];
+const C=[
+{n:"Data Analyst",a:"The Pattern Hunter",e:"🔍",tg:"You spot what others scroll past.",w:{AN:5,OR:3,PS:2},nx:"Try the Budget Detective quest: track a week of spending and find the one habit that costs the most.",st:"Reading data, finding patterns, asking the next question"},
+{n:"Business Analyst",a:"The Bridge Builder",e:"🌉",tg:"You turn numbers into decisions people understand.",w:{AN:4,CM:4,PS:3},nx:"Try the Menu Mystery quest: look at a shop’s price list and explain which item to promote and why.",st:"Linking data to people, explaining clearly, solving business problems"},
+{n:"Software Engineer",a:"The Problem Cracker",e:"🧩",tg:"Give you a mess and you will find the loose thread.",w:{PS:5,AN:4,OR:2},nx:"Try a bug-hunt quest: find the mistake in a short recipe of steps and fix it.",st:"Breaking big problems down, logic, testing ideas"},
+{n:"UX or Product Designer",a:"The Experience Architect",e:"🎨",tg:"You imagine things people actually enjoy using.",w:{CR:5,EM:4,PS:2},nx:"Try the App Fix quest: pick an app that annoys you and sketch a better screen.",st:"Fresh ideas, understanding users, making things simple"},
+{n:"Marketing Strategist",a:"The Story Spinner",e:"📣",tg:"You know how to make people care.",w:{CR:5,CM:4,AN:1},nx:"Try the Slogan Lab quest: pitch one product to two very different audiences.",st:"Big ideas, persuasive words, reading an audience"},
+{n:"Teacher or Counsellor",a:"The Guide",e:"🧭",tg:"People feel heard and capable around you.",w:{EM:5,CM:4,OR:2},nx:"Try the Study Buddy quest: explain one hard topic to a classmate in three simple steps.",st:"Listening, patience, helping others grow"},
+{n:"Project or Event Manager",a:"The Orchestrator",e:"🎬",tg:"Chaos becomes a schedule when you walk in.",w:{OR:5,CM:3,EM:3,PS:2},nx:"Try the Trip Planner quest: plan a day out for ten people on a fixed budget.",st:"Planning, sequencing, keeping people on track"},
+{n:"Operations Specialist",a:"The Optimiser",e:"⚙️",tg:"You make good systems run even better.",w:{PS:4,OR:4,AN:3},nx:"Try the Queue Fix quest: map a school canteen line and cut the waiting time.",st:"Finding bottlenecks, improving processes, staying organised"}
+];
+const $=s=>document.querySelector(s),app=$("#app");
+let i=0,ans=[],scr="h",L=(navigator.language||"en").toLowerCase().startsWith("ms")?"ms":"en";
+const QE=Q.map(q=>({job:q.job,t:q.t,sc:q.sc,tbl:q.tbl,o:q.o.map(o=>[o[0],o[3]])})),CE=C.map(c=>({n:c.n,a:c.a,tg:c.tg,nx:c.nx,st:c.st})),SKE={...SK};
+const SKB={AN:"Pemikiran Analitik",PS:"Penyelesaian Masalah",CM:"Komunikasi",CR:"Kreativiti",EM:"Empati & Kerja Berpasukan",OR:"Organisasi"};
+const QB=[
+{job:"Penganalisis Jualan",t:"Detektif Jualan",sc:"Pengurus anda berkongsi data jualan enam bulan lepas dan bertanya: “Bulan mana yang paling banyak jualan, dan apa yang perlu kita siasat?”",tbl:[["Jan",120],["Feb",95],["Mac",140],["Apr",180],["Mei",160],["Jun",175]],o:[["April paling tinggi (180). Jualan jatuh pada Mei, jadi saya akan semak apa yang berlaku pada April dan mengapa Mei menurun.","Anda membaca data dengan betul dan mengesan soalan susulan yang ditimbulkan oleh angka tersebut."],["Jun bulan terbaik kerana angkanya yang terkini.","Terkini tidak sama dengan tertinggi. Bandingkan setiap nilai sebelum membuat keputusan."],["Mac, kerana lonjakannya paling besar berbanding bulan sebelumnya.","Lonjakan terbesar ialah corak sebenar, tetapi soalan bertanya bulan tertinggi, iaitu April."],["April paling tinggi (180). Itu sahaja yang data tunjukkan.","Jawapan betul, tetapi penganalisis yang baik turut bertanya maksud corak itu, seperti penurunan pada Mei."]]},
+{job:"Perancang Operasi",t:"Kesesakan Pagi",sc:"Sebuah kafe mempunyai barisan 15 minit setiap pagi pada pukul 8. Tiga barista bertugas. Pemilik meminta anda menyelesaikannya.",o:[["Ambil dua lagi barista dengan segera.","Mungkin, tetapi kosnya tinggi dan anda belum pasti kekurangan staf ialah punca sebenar."],["Perhati satu waktu sibuk dan catat masa setiap langkah (pesanan, penyediaan, bayaran) untuk mencari di mana kelewatan sebenar.","Bagus. Cari punca sebenar dengan bukti dahulu, kemudian pilih penyelesaian."],["Naikkan harga supaya kurang pelanggan datang.","Ini mengurangkan pelanggan, bukan menyelesaikan masalah."],["Minta pelanggan datang lewat sedikit pada waktu pagi.","Mungkin membantu sedikit, tetapi ia memindahkan masalah kepada pelanggan."]]},
+{job:"Ejen Sokongan Pelanggan",t:"Bungkusan Lewat",sc:"Seorang pelanggan menulis: “Bungkusan saya lewat dua minggu dan tiada sesiapa membalas saya! Ini melampau.”",o:[["“Kelewatan ini salah kurier, bukan salah kami.”","Mungkin benar, tetapi bunyinya defensif dan tidak membantu pelanggan."],["“Maaf, ini memang menjengkelkan. Saya telah semak pesanan anda dan akan hantar kemas kini sebelum 5 petang hari ini.”","Akui perasaan, ambil tanggungjawab, dan beri langkah seterusnya yang jelas dengan masa."],["“Ini bayaran balik penuh,” dihantar sebelum menyemak apa-apa.","Murah hati, tetapi bayaran balik tanpa semakan mungkin bukan yang pelanggan perlukan."],["Hantar templat standard “kami mengalami kelewatan”.","Balasan umum membuat orang yang marah berasa diabaikan."]]},
+{job:"Pencipta Kempen",t:"Laci Telefon Lama",sc:"Kebanyakan remaja mempunyai telefon lama dalam laci di rumah. Cipta kempen untuk menggalakkan mereka mengitar semula telefon itu.",o:[["Poster bertulis “Sila kitar semula telefon anda!”","Jelas, tetapi tiada sebab untuk sesiapa bertindak."],["Cabaran sekolah “Laci-ke-Tong”: kelas berlumba mengumpul telefon lama, dengan papan markah langsung.","Asli dan menyeronokkan. Ia menjadikan tugas biasa sebagai permainan yang remaja mahu sertai."],["Tiru iklan kitar semula yang anda lihat di internet.","Idea pinjaman jarang terasa segar. Mulakan dengan khalayak anda sendiri."],["Beri kupon diskaun 5%.","Ganjaran yang munasabah, tetapi kurang imaginatif."]]},
+{job:"Ahli Pasukan",t:"Rakan Pasukan yang Senyap",sc:"Dalam projek berkumpulan, seorang rakan pasukan tidak membuat apa-apa dan tarikh akhir tinggal tiga hari.",o:[["Siapkan bahagian mereka sendiri dan diam sahaja.","Tarikh akhir terselamat, tetapi masalah tersembunyi dan anda kepenatan."],["Terus maklumkan kepada guru.","Kadangkala perlu, tetapi bercakap dengan rakan pasukan dahulu lebih adil dan sering lebih cepat."],["Mesej mereka secara peribadi, tanya apa yang menghalang, dan sepakati tugasan lebih kecil yang boleh mereka siapkan.","Anda mendengar dahulu, kemudian membuat pelan bersama."],["Buang nama mereka daripada projek.","Ini menghukum, bukan menyelesaikan masalah. Ia merosakkan kepercayaan."]]},
+{job:"Penyelaras Acara",t:"Karnival Sekolah",sc:"Karnival sekolah pada hari Sabtu. Hari ini Rabu. Tugasan: rekrut sukarelawan (3 hari), tempah dewan (2 hari), cetak poster (1 hari), beli makanan ringan (setengah hari, tetapi perlu tahu bilangan sukarelawan dahulu).",o:[["Beli makanan ringan dahulu kerana paling mudah.","Makanan ringan bergantung pada bilangan sukarelawan, jadi ini pasti membazir atau kekurangan."],["Mulakan tugasan paling lama dahulu (sukarelawan, dewan), kemudian poster, dan beli makanan ringan terakhir.","Anda menyusun mengikut tempoh dan kebergantungan. Itulah perancangan sebenar."],["Buat poster dahulu kerana paling kelihatan.","Kelihatan tidak sama dengan mendesak. Tugasan paling lama sepatutnya sudah bermula."],["Buat tugasan mengikut susunan yang disenaraikan.","Mudah, tetapi mengabaikan tempoh setiap tugasan."]]},
+{job:"Penganalisis Tinjauan",t:"Undian Kantin",sc:"Kelas anda mengundi minuman baharu kantin: Milo 18 undi, Teh Ais 12, Sirap Bandung 9, Air Kosong 6. Kantin hanya boleh menyimpan dua minuman. Yang mana anda cadangkan?",o:[["Sirap Bandung dan Air Kosong, kerana kurang orang memilihnya jadi barisan lebih pendek.","Undi lebih sedikit bermakna pembeli lebih sedikit. Angka menunjukkan sebaliknya."],["Milo sahaja, kerana ia menang.","Milo memang menang, tetapi kantin boleh menyimpan dua minuman, dan data menunjukkan yang kedua mana patut dipilih."],["Milo dan Teh Ais, dua undi teratas (30 daripada 45). Saya juga akan semak sama ada kelas lain bersetuju.","Anda menggunakan angka untuk membuat keputusan dan memikirkan sama ada sampel cukup besar."],["Milo dan Teh Ais, kerana saya suka kedua-duanya.","Pasangan yang betul, tetapi atas sebab yang salah. Buat keputusan dengan data, bukan selera sendiri."]]},
+{job:"Pembantu Teknologi",t:"Komputer yang Mati",sc:"Esok kelas anda perlukan makmal komputer, tetapi 5 daripada 20 komputer tidak boleh dihidupkan. Guru meminta bantuan anda.",o:[["Mulakan semula 5 komputer itu berulang kali sehingga ada yang berfungsi.","Mengulang perkara yang sama jarang membantu. Ubah sesuatu dan lihat apa yang berlaku."],["Beritahu guru makmal tidak boleh digunakan esok.","Jujur, tetapi menyerah sebelum mencari punca."],["Minta kesemua 20 komputer diganti.","Sangat mahal, dan 15 daripadanya berfungsi dengan baik."],["Semak apa persamaan 5 komputer itu (baris sama, palamuka sama, kabel sama) dan uji perkara itu dahulu.","Anda mencari corak untuk mengesan punca, kemudian membaikinya. Beginilah jurutera menyelesaikan masalah."]]},
+{job:"Tutor Rakan Sebaya",t:"Adik yang Keliru",sc:"Seorang pelajar lebih muda meminta anda menerangkan fotosintesis. Dia kelihatan benar-benar keliru.",o:[["Katakan “Mudah sahaja, nanti awak faham.”","Ini membuat pelajar berasa bodoh dan tidak mengajar apa-apa."],["Terangkan dengan semua istilah teknikal supaya tiada yang tertinggal.","Tepat, tetapi terlalu banyak sekali gus mengelirukan pemula."],["Bacakan takrifan buku teks sekali lagi dengan kuat.","Jika bacaan pertama tidak berjaya, perkataan yang sama tidak akan berjaya kali kedua."],["Bandingkan dengan memasak: tumbuhan “memasak” makanannya menggunakan cahaya matahari. Kemudian minta dia terangkan semula kepada anda.","Anda menggunakan contoh mudah, kemudian menyemak kefahamannya. Itu pengajaran yang hebat."]]},
+{job:"Pencipta Kandungan",t:"Perhimpunan yang Mengantukkan",sc:"Sekolah mahu pelajar mengingati mesej keselamatan jalan raya selama 5 minit semasa perhimpunan, tetapi kebiasaannya semua orang mengantuk.",o:[["Bacakan peraturan keselamatan perlahan-lahan daripada senarai.","Inilah yang membuat perhimpunan mengantukkan."],["Tunjukkan slaid yang sama seperti tahun lepas.","Slaid yang biasa tidak akan menarik perhatian sesiapa."],["Pasang muzik kuat dan harap orang mendengar.","Ia menyedarkan orang, tetapi mesejnya hilang."],["Minta pelajar melakonkan sketsa 60 saat tentang melintas jalan secara “salah”, kemudian minta penonton mengesan kesilapan.","Menyeronokkan, mudah diingat, dan membuat penonton turut serta dan bukan sekadar mendengar."]]},
+{job:"Mentor Pelajar",t:"Rakan Sekelas Baharu",sc:"Seorang pelajar baharu telah masuk ke kelas anda. Pada waktu rehat, dia duduk bersendirian.",o:[["Berasa kasihan tetapi tunggu dia datang kepada anda.","Prihatin, tetapi pelajar baharu selalunya perlukan seseorang yang memulakan dahulu."],["Minta guru mencarikan kawan untuknya.","Langkah yang adil, tetapi sapaan mesra daripada anda lebih bermakna."],["Jemput dia duduk bersama kumpulan anda, tanya tentang sekolah lamanya, dan kenalkan dia kepada seorang dua rakan.","Anda membuat dia berasa dialu-alukan dan membantunya berhubung dengan orang lain."],["Biarkan dia bersendirian, ada orang suka bersendirian.","Mungkin, tetapi anda belum tahu. Satu jemputan mudah tidak merugikan apa-apa."]]},
+{job:"Perancang Belajar",t:"Minggu Peperiksaan",sc:"Anda ada 4 peperiksaan dalam 10 hari akan datang. Anda juga ada latihan bola sepak dua kali seminggu dan majlis keluarga pada hari Sabtu.",o:[["Belajar subjek yang anda suka sehingga sehari sebelum peperiksaan.","Subjek paling sukar akan mendapat masa paling sedikit."],["Belajar setiap subjek sekali, mengikut susunan peperiksaan.","Satu permulaan, tetapi ia mengabaikan subjek yang perlukan lebih masa."],["Berjaga sepanjang malam sebelum setiap peperiksaan.","Otak yang letih kurang mengingat, dan tiada ruang untuk bahagian lain dalam hidup anda."],["Buat jadual waktu: senaraikan setiap subjek, beri lebih masa kepada yang paling sukar, masukkan latihan dan majlis keluarga, dan tambah hari rehat.","Anda merancang mengikut keseluruhan minggu anda, bukan hanya belajar. Itulah organisasi sebenar."]]}];
+const CB=[
+{n:"Penganalisis Data",a:"Pemburu Corak",tg:"Anda nampak apa yang orang lain terlepas pandang.",nx:"Cuba misi Detektif Bajet: jejak perbelanjaan seminggu dan cari satu tabiat yang paling banyak membazir.",st:"Membaca data, mencari corak, bertanya soalan seterusnya"},
+{n:"Penganalisis Perniagaan",a:"Pembina Jambatan",tg:"Anda menukar angka kepada keputusan yang orang faham.",nx:"Cuba misi Misteri Menu: lihat senarai harga sebuah kedai dan terangkan item mana patut dipromosikan dan kenapa.",st:"Menghubungkan data dengan manusia, menerangkan dengan jelas, menyelesaikan masalah perniagaan"},
+{n:"Jurutera Perisian",a:"Pemecah Masalah",tg:"Beri anda kekusutan, anda akan jumpa benang yang longgar.",nx:"Cuba misi Memburu Pepijat: cari kesilapan dalam beberapa langkah resipi dan betulkannya.",st:"Memecahkan masalah besar, logik, menguji idea"},
+{n:"Pereka UX atau Produk",a:"Arkitek Pengalaman",tg:"Anda membayangkan perkara yang benar-benar disukai pengguna.",nx:"Cuba misi Baiki Apl: pilih apl yang mengganggu anda dan lakar skrin yang lebih baik.",st:"Idea baharu, memahami pengguna, memudahkan sesuatu"},
+{n:"Ahli Strategi Pemasaran",a:"Penjalin Cerita",tg:"Anda tahu cara membuat orang peduli.",nx:"Cuba misi Makmal Slogan: pasarkan satu produk kepada dua khalayak yang sangat berbeza.",st:"Idea besar, kata-kata yang meyakinkan, memahami khalayak"},
+{n:"Guru atau Kaunselor",a:"Pembimbing",tg:"Orang berasa didengari dan mampu apabila bersama anda.",nx:"Cuba misi Rakan Belajar: terangkan satu topik sukar kepada rakan sekelas dalam tiga langkah mudah.",st:"Mendengar, sabar, membantu orang lain berkembang"},
+{n:"Pengurus Projek atau Acara",a:"Konduktor",tg:"Kekacauan menjadi jadual apabila anda tiba.",nx:"Cuba misi Perancang Percutian: rancang hari bersiar-siar untuk sepuluh orang dengan bajet tetap.",st:"Merancang, menyusun urutan, memastikan orang kekal di landasan"},
+{n:"Pakar Operasi",a:"Pengoptimum",tg:"Anda menjadikan sistem yang baik berjalan lebih baik.",nx:"Cuba misi Baiki Barisan: petakan barisan kantin sekolah dan kurangkan masa menunggu.",st:"Mencari kesesakan, menambah baik proses, kekal teratur"}];
+const T={en:{h1:"Which job fits the way you think?",intro:"Play twelve short quests based on real jobs. Each one takes about a minute. We score your skills along the way and give you a Career Card at the end.",start:"Start the quests",mo:"Month",sa:"Sales",best:"Strongest move:",also:"Also showing:",see:"See my Career Card",nextq:"Next quest",rt:"Your Career Card",rs:"Based on how you handled twelve real-job quests.",str:"Strengths:",mt:"Careers that match you",sp:"Your Skill Passport",kp:"keep practising",sn:"Skills backed by more than one quest are the most trustworthy:",ev:n=>`Evidence from ${n} quests`,wn:"What should I try next?",ys:x=>`You showed strong ${x}.`,re:"Retake the quests",cp:"Copy my result",cd:"Copied",ct:(a,n,s)=>`My Career Card: ${a} (${n}). Top skills: ${s}.`,th:"Theme",lg:"Bahasa Melayu"},
+ms:{h1:"Kerjaya mana yang sesuai dengan cara anda berfikir?",intro:"Mainkan dua belas misi pendek berdasarkan kerjaya sebenar. Setiap misi mengambil masa kira-kira seminit. Kami menilai kemahiran anda dan memberi Kad Kerjaya di akhir.",start:"Mulakan misi",mo:"Bulan",sa:"Jualan",best:"Langkah terbaik:",also:"Turut menunjukkan:",see:"Lihat Kad Kerjaya saya",nextq:"Misi seterusnya",rt:"Kad Kerjaya Anda",rs:"Berdasarkan cara anda menyelesaikan dua belas misi kerjaya sebenar.",str:"Kekuatan:",mt:"Kerjaya yang sepadan",sp:"Pasport Kemahiran Anda",kp:"terus berlatih",sn:"Kemahiran yang disokong lebih daripada satu misi paling boleh dipercayai:",ev:n=>`Bukti daripada ${n} misi`,wn:"Apa yang patut saya cuba seterusnya?",ys:x=>`Anda menunjukkan kekuatan dalam ${x}.`,re:"Ulang misi",cp:"Salin keputusan saya",cd:"Disalin",ct:(a,n,s)=>`Kad Kerjaya saya: ${a} (${n}). Kemahiran utama: ${s}.`,th:"Tema",lg:"English"}};
+const tr=k=>T[L][k];
+function apply(){const m=L==="ms";Object.assign(SK,m?SKB:SKE);Q.forEach((q,n)=>{const s=m?QB[n]:QE[n];q.job=s.job;q.t=s.t;q.sc=s.sc;if(s.tbl)q.tbl=s.tbl;q.o.forEach((o,k)=>{o[0]=s.o[k][0];o[3]=s.o[k][1]})});C.forEach((c,n)=>Object.assign(c,m?CB[n]:CE[n]));document.documentElement.lang=m?"ms":"en";$("#lg").textContent=tr("lg");$("#th").textContent=tr("th")}
+function bars(){return Q.map((_,k)=>`<b class="${k<=i?"on":""}"></b>`).join("")}
+function home(){
+ i=0;ans=[];scr="h";
+ app.innerHTML=`<section class="hero"><h1>${tr("h1")}</h1><p>${tr("intro")}</p><button class="btn" id="go">${tr("start")}</button><div class="chips">${Object.values(SK).map(s=>`<span class="chip">${s}</span>`).join("")}</div></section>`;
+ $("#go").onclick=quest;
+}
+function quest(){
+ scr="q";const q=Q[i];
+ const tbl=q.tbl?`<table><tr><th>${tr("mo")}</th><th>${tr("sa")}</th></tr>${q.tbl.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join("")}</table>`:"";
+ app.innerHTML=`<div class="q"><div class="prog" aria-label="Quest ${i+1} of ${Q.length}">${bars()}</div><span class="job">${q.job}</span><h2>${q.t}</h2><div class="scene">${q.sc}${tbl}</div><div class="opts">${q.o.map((o,k)=>`<button class="opt" data-k="${k}">${o[0]}</button>`).join("")}</div><div id="fb"></div></div>`;
+ document.querySelectorAll(".opt").forEach(b=>b.onclick=()=>pick(+b.dataset.k));
+}
+function pick(k){
+ const q=Q[i],o=q.o[k],best=q.o.find(x=>x[1]===5);
+ ans[i]={k,p:o[1],s:o[2]};
+ document.querySelectorAll(".opt").forEach((b,n)=>{b.disabled=true;if(n===k)b.classList.add("pick")});
+ const last=i===Q.length-1;
+ $("#fb").innerHTML=`<div class="fb ${o[1]>=4?"good":"bad"}" role="status"><h3>${SK[q.p]}</h3><div class="sc">${o[1]}/5</div><p>${o[3]}</p>${o[1]<5?`<p><b>${tr("best")}</b> ${best[0]}</p>`:""}<p>${tr("also")} ${SK[q.s]} (${o[2]}/5)</p><button class="btn" id="nx">${last?tr("see"):tr("nextq")}</button></div>`;
+ $("#nx").onclick=()=>{if(last)result();else{i++;quest();scrollTo(0,0)}};
+ $("#nx").focus();
+}
+function calc(){
+ const t={};
+ Object.keys(SK).forEach(k=>t[k]={sum:0,w:0,n:0});
+ Q.forEach((q,n)=>{const a=ans[n];t[q.p].sum+=a.p;t[q.p].w+=1;t[q.p].n++;t[q.s].sum+=a.s*.5;t[q.s].w+=.5;t[q.s].n++});
+ const sk={};Object.keys(t).forEach(k=>sk[k]={v:t[k].w?t[k].sum/t[k].w:0,n:t[k].n});
+ const ranked=C.map(c=>{
+  let d=0,m=0,cm=0;
+  Object.keys(SK).forEach(k=>{const a=sk[k].v/5,b=(c.w[k]||0)/5;d+=a*b;m+=a*a;cm+=b*b});
+  return{c,pct:Math.round(d/Math.sqrt(m*cm)*100)};
+ }).sort((x,y)=>y.pct-x.pct);
+ return{sk,ranked};
+}
+function result(){
+ scr="r";const{sk,ranked}=calc(),top=ranked[0].c;
+ const sorted=Object.keys(SK).sort((a,b)=>sk[b].v-sk[a].v);
+ const bar=k=>`<div class="bar"><span>${SK[k]}</span><span><em style="width:0" data-w="${sk[k].v/5*100}%"></em></span><span>${sk[k].v.toFixed(1)}</span></div>`;
+ app.innerHTML=`<div class="res"><h1>${tr("rt")}</h1><p>${tr("rs")}</p>
+ <div class="stage"><div class="pc" id="pc"><div class="pi"><div class="em">${top.e}</div><div class="ar">${top.a}</div><div class="cr">${top.n}</div><p class="tg">${top.tg}</p><div class="bars">${sorted.map(bar).join("")}</div><div class="tags">${tr("str")} ${top.st}</div></div></div></div>
+ <div class="sec"><h2>${tr("mt")}</h2>${ranked.slice(0,3).map((r,n)=>`<div class="row"><div><b>${r.c.n}</b><small>${r.c.a}</small></div><span class="pct">${r.pct}%</span></div>`).join("")}</div>
+ <div class="sec"><h2>${tr("sp")}</h2>${Q.map((q,n)=>{const a=ans[n];return`<div class="row"><div><b>${q.t}</b><small>${SK[q.p]}: ${a.p}/5${a.p>=4?"":" · "+tr("kp")}</small></div><span class="badge">${a.p>=4?"🏅":"🌱"}</span></div>`}).join("")}
+ <p style="color:var(--mut)">${tr("sn")}</p>
+ ${Object.keys(SK).map(k=>`<div class="row"><div><b>${SK[k]}</b><small>${tr("ev")(sk[k].n)}</small></div><span class="pct">${sk[k].v.toFixed(1)}</span></div>`).join("")}</div>
+ <div class="nx sec"><h2>${tr("wn")}</h2><p>${tr("ys")(SK[sorted[0]].toLowerCase())} ${top.nx}</p></div>
+ <div class="acts"><button class="btn" id="re">${tr("re")}</button><button class="ghost" id="cp">${tr("cp")}</button></div></div>`;
+ requestAnimationFrame(()=>setTimeout(()=>document.querySelectorAll("em[data-w]").forEach(e=>e.style.width=e.dataset.w),80));
+ const pc=$("#pc");
+ pc.parentElement.onpointermove=e=>{const r=pc.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;pc.style.transform=`rotateY(${x*14}deg) rotateX(${-y*14}deg)`};
+ pc.parentElement.onpointerleave=()=>pc.style.transform="";
+ $("#re").onclick=()=>{home();scrollTo(0,0)};
+ $("#cp").onclick=e=>{const t=tr("ct")(top.a,top.n,sorted.slice(0,3).map(k=>SK[k]).join(", "));try{navigator.clipboard.writeText(t);e.target.textContent=tr("cd")}catch(x){e.target.textContent=t}};
+ scrollTo(0,0);
+}
+$("#th").onclick=()=>{const r=document.documentElement,d=getComputedStyle(r).getPropertyValue("--bg").trim()==="#15112e";r.dataset.theme=d?"light":"dark"};
+$("#lg").onclick=()=>{L=L==="ms"?"en":"ms";apply();if(scr==="h")home();else if(scr==="r")result();else{quest();if(ans[i])pick(ans[i].k)}};
+apply();home();
+</script>
+</body>
+</html>
