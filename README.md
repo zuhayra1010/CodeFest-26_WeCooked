@@ -69,7 +69,3 @@ Its colourful interface, gamified challenges and bilingual support make career e
 - Expand the Skill Passport with achievements, milestones and progress reports.
 - Introduce more interactive, hands-on job simulations.
 
-## Project Status
-
-Developed as part of CodeFest-26 by Team WeCooked.
-
