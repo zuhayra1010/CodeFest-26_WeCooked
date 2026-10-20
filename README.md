@@ -1,6 +1,12 @@
 # CodeFest-26_WeCooked
 
+
+
 # KerjayaQuest — Discover Your Skills, Explore Your Future
+
+## KerjayaQuest Website Link
+
+https://zuhayra1010.github.io/CodeFest-26_WeCooked/
 
 ## About the Project
 
@@ -68,4 +74,3 @@ Its colourful interface, gamified challenges and bilingual support make career e
 - Suggest learning activities to help students develop weaker skills.
 - Expand the Skill Passport with achievements, milestones and progress reports.
 - Introduce more interactive, hands-on job simulations.
-
