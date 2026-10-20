@@ -1,6 +1,6 @@
 # CodeFest-26_WeCooked
 
-
+![Gambar](gambar.jpeg)
 
 # KerjayaQuest — Discover Your Skills, Explore Your Future
 
