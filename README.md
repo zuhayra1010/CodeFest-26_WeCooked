@@ -1,62 +1,75 @@
 # CodeFest-26_WeCooked
+
 # KerjayaQuest — Discover Your Skills, Explore Your Future
 
-## About the Project :
+## About the Project
 
-KerjayaQuest is an interactive career exploration website that helps students discover their strengths and explore potential career paths through short, job-related challenges.
+KerjayaQuest is an interactive career exploration website designed to help students discover their strengths and explore potential career paths through short, job-related challenges.
 
-Instead of relying only on career quizzes or academic results, students can try practical activities inspired by real-world jobs, receive feedback on their skills, and discover careers that may suit them.
+Rather than relying solely on career quizzes, interests or academic results, students respond to realistic, workplace-inspired scenarios. Their answers receive feedback and skill scores, helping them better understand their abilities and discover careers that may suit them.
 
-## Problem Statement :
+## Problem Statement
 
-Many students struggle to choose a career because they do not fully understand their own skills or what different jobs actually involve.
+Many students struggle to choose a career because they may not fully understand their strengths or what different jobs involve.
 
-Traditional career guidance often relies on interests, academic results, and career quizzes, which may not accurately reflect students' abilities in real tasks.
+Traditional career guidance often relies on interests, academic results and self-reported preferences, which may not fully reflect how students approach real-world situations.
 
-KerjayaQuest aims to bridge this gap by allowing students to explore careers through interactive, practical challenges.
+KerjayaQuest addresses this challenge by allowing students to explore career-related scenarios, evaluate their responses and discover potential career paths based on their demonstrated skills.
 
-## Target Users :
+## Target Users
 
 - Secondary school students exploring future career options.
-- College and university students who are unsure about their future careers.
-- Students who want to explore different careers but have limited access to career guidance.
+- College and university students who are uncertain about their career direction.
+- Students who want to understand their strengths and explore different professions.
 
-## Key Features :
+## Key Features
 
-- **Interactive Career Challenges:** Complete short tasks inspired by real-world jobs.
-- **Skill Discovery:** Discover strengths such as creativity, analytical thinking, and problem-solving.
-- **Career Recommendations:** Explore careers related to skills demonstrated through completed challenges.
-- **Skill Passport:** Save challenge results, discovered skills, and personal progress.
-- **Career Exploration:** Learn about different career paths and the skills required for them.
+- **Interactive Career Challenges:** Complete 12 short, multiple-choice quests inspired by real-world jobs and everyday situations.
+- **Skill Discovery:** Explore six key skills: analytical thinking, problem-solving, communication, creativity, empathy and teamwork, and organisation.
+- **Personalised Career Recommendations:** View the top three career matches based on skill scores generated from completed challenges.
+- **Career Card:** View a personalised results card featuring a matching career, strengths and skill scores.
+- **Skill Passport:** Review completed quest results, individual scores and an overall breakdown of demonstrated skills.
+- **Bilingual Interface:** Switch between English and Bahasa Melayu.
+- **Login and Registration Demo:** Sign up or log in to access the career challenges, with a demo account available for testing.
 
-## How It Works :
+## How It Works
 
-1. **Choose a Challenge** — Select a mini task to explore.
-2. **Complete the Task** — Try an activity inspired by a real-world job.
-3. **Discover Your Skills** — Receive feedback based on your performance.
-4. **Explore Careers** — Discover careers related to your demonstrated strengths.
-5. **Build Your Skill Passport** — Track completed challenges and progress.
+1. **Sign In:** Log in or create a demo account to access the challenges.
+2. **Choose a Challenge:** Begin a career-related quest.
+3. **Answer the Scenario:** Select a response to a realistic job-related situation.
+4. **Receive Feedback:** View your score, feedback and an explanation of the recommended response.
+5. **Discover Your Career Matches:** Complete all 12 quests to generate your Career Card and view your top three career matches.
+6. **Explore Your Skill Passport:** Review your quest results and skill breakdown, then identify areas for further development.
 
-## Innovation :
+## Innovation
 
-KerjayaQuest focuses on learning through experience rather than relying solely on self-reported interests or traditional career quizzes.
+KerjayaQuest promotes experiential career exploration through realistic, job-inspired scenarios rather than relying solely on self-reported interests or traditional career quizzes.
 
-By allowing students to complete practical mini challenges, the platform helps them gain a better understanding of their abilities and explore potential career paths with greater confidence.
+By evaluating how students respond to different situations, the website provides immediate feedback, highlights potential strengths and connects skill scores to relevant career paths.
 
-## Technologies Used :
+Its colourful interface, gamified challenges and bilingual support make career exploration more accessible and engaging for students.
 
-*Update this section based on the technologies used in the project.*
+## Technologies Used
 
-- Frontend: HTML, CSS, JavaScript
-- Backend: To be determined
-- Database: To be determined
-- Development Tools: Visual Studio Code, Git, and GitHub
+- **Frontend:** HTML5, CSS3 and JavaScript
+- **Browser Storage:** LocalStorage for demo account and session data
+- **Web API:** Web Crypto API for password hashing where supported
+- **Development Tools:** Visual Studio Code, Git and GitHub
 
-## Future Improvements :
+**Note:** The current version uses browser-based demo authentication and does not include a backend server or external database.
 
+## Future Improvements
+
+- Develop a secure backend authentication system.
+- Integrate a database for persistent user accounts and progress tracking.
+- Save Skill Passport results so students can revisit their progress across sessions and devices.
 - Add more challenges across different career fields.
-- Improve personalized career recommendations.
-- Provide suggestions for skills students can develop.
-- Add progress tracking and visual skill reports.
-- Expand the Skill Passport with achievements and completed challenges.
+- Improve career recommendations using more detailed skill assessments.
+- Suggest learning activities to help students develop weaker skills.
+- Expand the Skill Passport with achievements, milestones and progress reports.
+- Introduce more interactive, hands-on job simulations.
+
+## Project Status
+
+Developed as part of CodeFest-26 by Team WeCooked.
 
