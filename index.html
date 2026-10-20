@@ -3,13 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Career Quest</title>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<title>Kerjaya Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600&family=Chewy&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#fa9a92;--ink:#1E1A3C;--mut:#5d5883;--card:#fff;--line:#d9d2ff;--vi:#6D3BF2;--sun:#FFC83D;--mint:#1FB394;--co:#FF6B6B;--ok:#e3f8f1;--no:#fff0f0;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15112e;--ink:#f1eeff;--mut:#b2abdd;--card:#221c47;--line:#3b3270;--ok:#12352f;--no:#40222b}}
-:root[data-theme="dark"]{--bg:#15112e;--ink:#f1eeff;--mut:#b2abdd;--card:#221c47;--line:#3b3270;--ok:#12352f;--no:#40222b}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *,*::before,*::after{box-sizing:inherit}
 body{margin:0;background:
@@ -21,22 +19,14 @@ body{margin:0;background:
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
   background:linear-gradient(120deg,rgba(255,255,255,.25),transparent 42%,rgba(255,255,255,.12));
 }
-@media (prefers-color-scheme:dark){body{background:
-  radial-gradient(ellipse at 12% 8%,rgba(109,59,242,.22),transparent 30%),
-  radial-gradient(ellipse at 88% 18%,rgba(255,200,61,.10),transparent 30%),
-  linear-gradient(135deg,#17112f 0%,#28204c 52%,#153c43 100%);background-attachment:fixed}}
-:root[data-theme="dark"] body{background:
-  radial-gradient(ellipse at 12% 8%,rgba(109,59,242,.22),transparent 30%),
-  radial-gradient(ellipse at 88% 18%,rgba(255,200,61,.10),transparent 30%),
-  linear-gradient(135deg,#17112f 0%,#28204c 52%,#153c43 100%);background-attachment:fixed}
 :root[data-theme="light"] body{background:
   radial-gradient(ellipse at 12% 8%,rgba(255,255,255,.78) 0,rgba(255,255,255,0) 28%),
   radial-gradient(ellipse at 88% 18%,rgba(255,200,61,.32) 0,rgba(255,200,61,0) 30%),
   radial-gradient(ellipse at 80% 88%,rgba(31,179,148,.22) 0,rgba(31,179,148,0) 30%),
   linear-gradient(135deg,#ffd2cc 0%,#f6b4ed 38%,#c9baff 72%,#b9f0e2 100%);background-attachment:fixed}
 h1,h2,h3{font-family:"Bricolage Grotesque",Georgia,sans-serif;line-height:1.1;margin:0}
-main{max-width:760px;margin:0 auto;padding:24px 20px 64px}
-.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+main{max-width:760px;margin:0 auto;padding:24px 20px 64px;text-align:center}
+.top{display:flex;justify-content:center;align-items:center;margin-bottom:28px;flex-wrap:wrap;gap:14px}
 .logo{font:800 20px "Bricolage Grotesque",sans-serif;display:flex;gap:8px;align-items:center}
 .logo i{width:26px;height:26px;border-radius:8px 8px 8px 2px;background:var(--vi);display:inline-block;transform:rotate(-8deg)}
 button{font:inherit;cursor:pointer;color:inherit}
@@ -53,29 +43,33 @@ button:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
 .hero #go:hover{transform:translateY(-4px) rotate(-1.5deg) scale(1.035)}
 .btn:active{transform:translateY(4px);box-shadow:0 1px 0 #4a24b8}
 .ghost{background:none;border:2px solid var(--line);border-radius:12px;padding:8px 14px;font-size:14px}
-.hero h1{font-size:clamp(40px,9vw,72px);font-weight:800;letter-spacing:-.02em;margin:18px 0 14px}
-.hero p{max-width:52ch;color:var(--mut);margin:0 0 26px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin:34px 0 0}
+.hero{min-height:calc(100svh - 150px);display:flex;flex-direction:column;justify-content:center;align-items:center}
+.wm{margin:10px auto 26px;display:grid;justify-items:center;font:400 clamp(64px,16vw,130px)/.95 Chewy,"Bricolage Grotesque",sans-serif;transform:rotate(-3deg);user-select:none;cursor:pointer;text-align:center}
+.ly{grid-area:1/1;display:block}
+.ly .ln{display:block;white-space:nowrap}
+.ly i{font-style:normal;display:inline-block;letter-spacing:-.01em;animation:wave 2.8s ease-in-out infinite;animation-delay:var(--d)}
+.ly i.hop{animation:hop .6s cubic-bezier(.3,1.6,.5,1);animation-delay:0s}
+.back{color:#fff;-webkit-text-stroke:.24em #fff;paint-order:stroke fill;filter:drop-shadow(0 7px 0 rgba(109,59,242,.22))}
+@keyframes wave{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-.06em) rotate(2deg)}}
+@keyframes hop{0%{transform:translateY(0) scale(1)}35%{transform:translateY(-.35em) rotate(var(--r,8deg)) scale(1.25)}65%{transform:translateY(.04em) scale(.94)}100%{transform:translateY(0) scale(1)}}.hero p{max-width:52ch;color:var(--mut);margin:0 auto 26px}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:34px 0 0}
 .chip{border:2px solid var(--ink);border-radius:99px;padding:6px 14px;font-weight:600;font-size:15px;background:var(--card)}
 .chip:nth-child(1){background:var(--sun);color:#1E1A3C}.chip:nth-child(3){background:var(--mint);color:#06241d}.chip:nth-child(5){background:var(--co);color:#2b0a0a}
 .prog{display:flex;gap:6px;margin-bottom:22px}.prog b{flex:1;height:8px;border-radius:9px;background:var(--line)}.prog b.on{background:var(--vi)}
 .job{display:inline-block;background:var(--sun);color:#1E1A3C;border-radius:8px;padding:3px 12px;font-weight:600;font-size:15px;margin-bottom:12px}
 .q h2{font-size:clamp(26px,5vw,36px);margin-bottom:12px}
-.scene{position:relative;background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(250,247,255,.96));color:#211944;
-  border:3px solid #6d3bf2;border-left:10px solid #ff6b6b;border-radius:20px;padding:24px 22px 20px;
-  margin:22px 0 22px;box-shadow:0 10px 0 rgba(70,43,150,.12),0 18px 34px rgba(52,35,113,.12),inset 0 1px 0 #fff}
-.scene::before{content:"YOUR QUEST";display:inline-block;background:linear-gradient(90deg,#6d3bf2,#a24cff);color:#fff;
-  font:800 12px/1 "Bricolage Grotesque",sans-serif;letter-spacing:.12em;border-radius:999px;padding:8px 12px;margin-bottom:12px;
-  box-shadow:0 3px 0 rgba(55,31,135,.2)}
+.scene{position:relative;background:linear-gradient(145deg,#fffdf4,#f4edff);color:#211944;text-align:center;
+  border:4px solid #6d3bf2;border-left:10px solid #ff6b6b;border-radius:20px;padding:24px 22px 20px;
+  margin:22px 0 22px;box-shadow:0 10px 0 rgba(70,43,150,.16),0 18px 34px rgba(52,35,113,.14),inset 0 1px 0 #fff;font-weight:600}
 .scene table{color:#211944}
 .scene td,.scene th{border-bottom:1px solid #d9d2ff;padding:6px 8px;text-align:left}
 .q h2{font-size:clamp(28px,5.5vw,39px);margin-bottom:14px;letter-spacing:-.015em}
 .opt{font-size:16px;line-height:1.5;background:rgba(255,255,255,.94);color:#211944;border:2px solid #d2c8ff;border-radius:16px;padding:16px 18px;transition:border-color .15s,transform .15s,box-shadow .15s}
 .opt:hover:not(:disabled){border-color:var(--vi);transform:translateX(4px);box-shadow:0 5px 0 rgba(109,59,242,.12)}
 .opt.pick{opacity:1;border-color:var(--vi);border-width:3px;background:#f0eaff}
-.scene table{border-collapse:collapse;margin-top:10px;width:100%;max-width:420px}.scene td,.scene th{border-bottom:1px solid var(--line);padding:4px 8px;text-align:left}
+.scene table{border-collapse:collapse;margin:12px auto 0;width:100%;max-width:420px}.scene td,.scene th{border-bottom:1px solid var(--line);padding:6px 8px;text-align:center}
 .opts{display:grid;gap:10px}
-.opt{text-align:left;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:14px 16px;transition:border-color .15s,transform .15s}
+.opt{text-align:center;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:14px 16px;transition:border-color .15s,transform .15s}
 .opt:hover:not(:disabled){border-color:var(--vi);transform:translateX(4px)}
 .opt:disabled{cursor:default;opacity:.75}.opt.pick{opacity:1;border-color:var(--vi);border-width:3px}
 .fb{margin-top:18px;border-radius:16px;padding:18px 20px;animation:pop .35s ease}
@@ -103,14 +97,31 @@ button:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
 .row small{color:var(--mut);display:block}.pct{font:800 24px "Bricolage Grotesque";color:var(--vi)}
 .badge{font-size:26px}
 .nx{background:var(--sun);color:#1E1A3C;border-radius:18px;padding:20px 22px}.nx h2{margin-bottom:6px}.nx p{margin:0}
-.acts{display:flex;gap:10px;flex-wrap:wrap}
+.acts{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
 @media(max-width:480px){main{padding:18px 15px 48px}.hero #go{width:100%;justify-content:center;padding:19px 18px}.scene{padding:20px 16px}.opt{padding:14px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.auth{max-width:420px;width:100%;text-align:left;margin:6px auto 0}
+.auth h2{font-size:clamp(26px,6vw,32px);margin-bottom:4px;text-align:center}
+.auth .asub{color:var(--mut);text-align:center;margin:0 auto 18px;font-weight:400;font-size:16px}
+.fld{display:block;margin-bottom:12px}
+.fld span{display:block;font-weight:600;font-size:14px;margin:0 0 5px 4px;color:#3a3170}
+.fld div{position:relative}
+.fld input{width:100%;font:inherit;font-size:16px;font-weight:600;color:#211944;background:#fff;border:2px solid #d2c8ff;border-radius:14px;padding:13px 16px;transition:border-color .15s,box-shadow .15s}
+.fld input:focus{outline:none;border-color:var(--vi);box-shadow:0 0 0 4px rgba(109,59,242,.15)}
+.fld .eye{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:0;font-size:13px;font-weight:600;color:var(--vi);padding:6px 8px}
+.err{min-height:22px;color:#c9302c;font-weight:600;font-size:14px;margin:0 0 8px 4px}
+.auth .btn{width:100%}
+.auth .link{display:block;margin:16px auto 0;background:none;border:0;color:var(--vi);font-weight:600;text-decoration:underline;font-size:15px}
+.auth .ghost{display:block;margin:12px auto 0;background:rgba(255,255,255,.7)}
+.auth .hint{text-align:center;color:var(--mut);font-size:13px;font-weight:400;margin:10px 0 0}
+.hi{display:inline-block;background:#fff;border:2px solid var(--ink);border-radius:99px;padding:5px 16px;font-weight:600;font-size:15px;margin-bottom:6px;box-shadow:0 3px 0 rgba(30,26,60,.15)}
+[hidden]{display:none!important}
 </style>
 </head>
 <body>
 <main>
-<div class="top"><div class="logo"><i></i>Career Quest</div><div class="acts"><button class="ghost" id="lg" aria-label="Change language">Bahasa Melayu</button><button class="ghost" id="th" aria-label="Toggle light or dark theme">Theme</button></div></div>
+<div class="top"><div class="logo"><i></i>Kerjaya Quest</div><div class="acts"><button class="ghost" id="lo" hidden></button><button class="ghost" id="lg" aria-label="Change language">Bahasa Melayu</button></div></div>
 <div id="app"></div>
 </main>
 <script>
@@ -214,15 +225,31 @@ const CB=[
 {n:"Guru atau Kaunselor",a:"Pembimbing",tg:"Orang berasa didengari dan mampu apabila bersama anda.",nx:"Cuba misi Rakan Belajar: terangkan satu topik sukar kepada rakan sekelas dalam tiga langkah mudah.",st:"Mendengar, sabar, membantu orang lain berkembang"},
 {n:"Pengurus Projek atau Acara",a:"Konduktor",tg:"Kekacauan menjadi jadual apabila anda tiba.",nx:"Cuba misi Perancang Percutian: rancang hari bersiar-siar untuk sepuluh orang dengan bajet tetap.",st:"Merancang, menyusun urutan, memastikan orang kekal di landasan"},
 {n:"Pakar Operasi",a:"Pengoptimum",tg:"Anda menjadikan sistem yang baik berjalan lebih baik.",nx:"Cuba misi Baiki Barisan: petakan barisan kantin sekolah dan kurangkan masa menunggu.",st:"Mencari kesesakan, menambah baik proses, kekal teratur"}];
-const T={en:{h1:"Which job fits the way you think?",intro:"Play twelve short quests based on real jobs. Each one takes about a minute. We score your skills along the way and give you a Career Card at the end.",start:"Start the quests",mo:"Month",sa:"Sales",best:"Strongest move:",also:"Also showing:",see:"See my Career Card",nextq:"Next quest",rt:"Your Career Card",rs:"Based on how you handled twelve real-job quests.",str:"Strengths:",mt:"Careers that match you",sp:"Your Skill Passport",kp:"keep practising",sn:"Skills backed by more than one quest are the most trustworthy:",ev:n=>`Evidence from ${n} quests`,wn:"What should I try next?",ys:x=>`You showed strong ${x}.`,re:"Retake the quests",cp:"Copy my result",cd:"Copied",ct:(a,n,s)=>`My Career Card: ${a} (${n}). Top skills: ${s}.`,th:"Theme",lg:"Bahasa Melayu"},
-ms:{h1:"Kerjaya mana yang sesuai dengan cara anda berfikir?",intro:"Mainkan dua belas misi pendek berdasarkan kerjaya sebenar. Setiap misi mengambil masa kira-kira seminit. Kami menilai kemahiran anda dan memberi Kad Kerjaya di akhir.",start:"Mulakan misi",mo:"Bulan",sa:"Jualan",best:"Langkah terbaik:",also:"Turut menunjukkan:",see:"Lihat Kad Kerjaya saya",nextq:"Misi seterusnya",rt:"Kad Kerjaya Anda",rs:"Berdasarkan cara anda menyelesaikan dua belas misi kerjaya sebenar.",str:"Kekuatan:",mt:"Kerjaya yang sepadan",sp:"Pasport Kemahiran Anda",kp:"terus berlatih",sn:"Kemahiran yang disokong lebih daripada satu misi paling boleh dipercayai:",ev:n=>`Bukti daripada ${n} misi`,wn:"Apa yang patut saya cuba seterusnya?",ys:x=>`Anda menunjukkan kekuatan dalam ${x}.`,re:"Ulang misi",cp:"Salin keputusan saya",cd:"Disalin",ct:(a,n,s)=>`Kad Kerjaya saya: ${a} (${n}). Kemahiran utama: ${s}.`,th:"Tema",lg:"English"}};
+const T={en:{h1:"Kerjaya Quest",intro:"Find your vibe. Try mini job challenges, discover your strengths, and unlock your next career move.",start:"Explore your career era ",mo:"Month",sa:"Sales",best:"Strongest move:",also:"Also showing:",see:"See my Career Card",nextq:"Next quest",rt:"Your Career Card",rs:"Based on how you handled twelve real-job quests.",str:"Strengths:",mt:"Careers that match you",sp:"Your Skill Passport",kp:"keep practising",sn:"Skills backed by more than one quest are the most trustworthy:",ev:n=>`Evidence from ${n} quests`,wn:"What should I try next?",ys:x=>`You showed strong ${x}.`,re:"Retake the quests",cp:"Copy my result",cd:"Copied",ct:(a,n,s)=>`My Career Card: ${a} (${n}). Top skills: ${s}.`,lg:"Bahasa Melayu"},
+ms:{h1:"Kerjaya Quest",intro:"Cari potensi diri anda! Cuba cabaran kerjaya ringkas, kenali kekuatan anda dan teroka laluan kerjaya seterusnya.",start:"Jom teroka kerjaya ",mo:"Bulan",sa:"Jualan",best:"Langkah terbaik:",also:"Turut menunjukkan:",see:"Lihat Kad Kerjaya saya",nextq:"Misi seterusnya",rt:"Kad Kerjaya Anda",rs:"Berdasarkan cara anda menyelesaikan dua belas misi kerjaya sebenar.",str:"Kekuatan:",mt:"Kerjaya yang sepadan",sp:"Pasport Kemahiran Anda",kp:"terus berlatih",sn:"Kemahiran yang disokong lebih daripada satu misi paling boleh dipercayai:",ev:n=>`Bukti daripada ${n} misi`,wn:"Apa yang patut saya cuba seterusnya?",ys:x=>`Anda menunjukkan kekuatan dalam ${x}.`,re:"Ulang misi",cp:"Salin keputusan saya",cd:"Disalin",ct:(a,n,s)=>`Kad Kerjaya saya: ${a} (${n}). Kemahiran utama: ${s}.`,lg:"English"}};
 const tr=k=>T[L][k];
-function apply(){const m=L==="ms";Object.assign(SK,m?SKB:SKE);Q.forEach((q,n)=>{const s=m?QB[n]:QE[n];q.job=s.job;q.t=s.t;q.sc=s.sc;if(s.tbl)q.tbl=s.tbl;q.o.forEach((o,k)=>{o[0]=s.o[k][0];o[3]=s.o[k][1]})});C.forEach((c,n)=>Object.assign(c,m?CB[n]:CE[n]));document.documentElement.lang=m?"ms":"en";$("#lg").textContent=tr("lg");$("#th").textContent=tr("th")}
+function apply(){const m=L==="ms";Object.assign(SK,m?SKB:SKE);Q.forEach((q,n)=>{const s=m?QB[n]:QE[n];q.job=s.job;q.t=s.t;q.sc=s.sc;if(s.tbl)q.tbl=s.tbl;q.o.forEach((o,k)=>{o[0]=s.o[k][0];o[3]=s.o[k][1]})});C.forEach((c,n)=>Object.assign(c,m?CB[n]:CE[n]));document.documentElement.lang=m?"ms":"en";$("#lg").textContent=tr("lg");}
 function bars(){return Q.map((_,k)=>`<b class="${k<=i?"on":""}"></b>`).join("")}
+function wcol(n){const t=n/11,a=[255,79,168],b=[255,214,205];return `rgb(${a.map((v,k)=>Math.round(v+(b[k]-v)*t)).join(",")})`}
+function wlayer(front){
+ let off=0;
+ return ["Kerjaya","Quest"].map(w=>{
+  const h=[...w].map((c,k)=>{const n=off+k;return `<i data-n="${n}" style="--d:${(n*.12).toFixed(2)}s${front?`;color:${wcol(n)}`:""}">${c}</i>`}).join("");
+  off+=w.length;return `<span class="ln">${h}</span>`;
+ }).join("");
+}
+function hop(n){
+ document.querySelectorAll(`.ly i[data-n="${n}"]`).forEach(el=>{
+  el.style.setProperty("--r",(Math.random()*30-15).toFixed(0)+"deg");
+  el.classList.remove("hop");void el.offsetWidth;el.classList.add("hop");
+  el.onanimationend=()=>el.classList.remove("hop");
+ });
+}
 function home(){
  i=0;ans=[];scr="h";
- app.innerHTML=`<section class="hero"><h1>${tr("h1")}</h1><p>${tr("intro")}</p><button class="btn" id="go">${tr("start")}</button><div class="chips">${Object.values(SK).map(s=>`<span class="chip">${s}</span>`).join("")}</div></section>`;
+ app.innerHTML=`<section class="hero">${greet()}<h1 class="wm" aria-label="${tr("h1")}"><span class="ly back" aria-hidden="true">${wlayer(false)}</span><span class="ly front" aria-hidden="true">${wlayer(true)}</span></h1><p>${tr("intro")}</p><button class="btn" id="go">${tr("start")}</button><div class="chips">${Object.values(SK).map(s=>`<span class="chip">${s}</span>`).join("")}</div></section>`;
  $("#go").onclick=quest;
+ $(".front").addEventListener("pointerover",e=>{const l=e.target.closest("i");if(l)hop(l.dataset.n)});
 }
 function quest(){
  scr="q";const q=Q[i];
@@ -271,9 +298,54 @@ function result(){
  $("#cp").onclick=e=>{const t=tr("ct")(top.a,top.n,sorted.slice(0,3).map(k=>SK[k]).join(", "));try{navigator.clipboard.writeText(t);e.target.textContent=tr("cd")}catch(x){e.target.textContent=t}};
  scrollTo(0,0);
 }
-$("#th").onclick=()=>{const r=document.documentElement,d=getComputedStyle(r).getPropertyValue("--bg").trim()==="#15112e";r.dataset.theme=d?"light":"dark"};
-$("#lg").onclick=()=>{L=L==="ms"?"en":"ms";apply();if(scr==="h")home();else if(scr==="r")result();else{quest();if(ans[i])pick(ans[i].k)}};
-apply();home();
+
+/* ---------- DEMO AUTH + "DATABASE" (stored on this device, async like a real DB) ---------- */
+const AT={en:{wel:"Welcome back!",sub:"Log in to start your career quest.",reg:"Create your account",rsub:"Sign up in seconds. It’s free.",nm:"Your name",em:"Email",pw:"Password",pw2:"Confirm password",li:"Log in",su:"Sign up",tu:"New here? Create an account",ti:"Already have an account? Log in",demo:"Use demo account",out:"Log out",hi:n=>`Hi, ${n}! 👋`,e1:"Please fill in every field.",e2:"Enter a valid email address.",e3:"Password needs at least 6 characters.",e4:"Passwords do not match.",e5:"That email is already registered.",e6:"Wrong email or password.",ld:"Checking…",note:"Demo database. Accounts are saved on this device only.",sh:"Show",hd:"Hide"},
+ms:{wel:"Selamat kembali!",sub:"Log masuk untuk mulakan misi kerjaya anda.",reg:"Cipta akaun anda",rsub:"Daftar dalam beberapa saat. Percuma.",nm:"Nama anda",em:"E-mel",pw:"Kata laluan",pw2:"Sahkan kata laluan",li:"Log masuk",su:"Daftar",tu:"Baru di sini? Cipta akaun",ti:"Sudah ada akaun? Log masuk",demo:"Guna akaun demo",out:"Log keluar",hi:n=>`Hai, ${n}! 👋`,e1:"Sila isi semua ruangan.",e2:"Masukkan alamat e-mel yang sah.",e3:"Kata laluan perlu sekurang-kurangnya 6 aksara.",e4:"Kata laluan tidak sepadan.",e5:"E-mel itu sudah didaftarkan.",e6:"E-mel atau kata laluan salah.",ld:"Menyemak…",note:"Pangkalan data demo. Akaun disimpan pada peranti ini sahaja.",sh:"Tunjuk",hd:"Sembunyi"}};
+const at=k=>AT[L][k];
+const DBK="kq_users_v1",SSK="kq_session_v1",mem={};
+const st={get(k){try{return localStorage.getItem(k)}catch(e){return mem[k]??null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){mem[k]=v}},del(k){try{localStorage.removeItem(k)}catch(e){delete mem[k]}}};
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+async function hash(x){try{const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode("kq:"+x));return[...new Uint8Array(b)].map(n=>n.toString(16).padStart(2,"0")).join("")}catch(e){return btoa(unescape(encodeURIComponent("kq:"+x)))}}
+const DB={
+ async all(){await wait(350);try{return JSON.parse(st.get(DBK)||"[]")}catch(e){return[]}},
+ async save(u){st.set(DBK,JSON.stringify(u))},
+ async seed(){const u=await this.all();if(!u.some(x=>x.email==="demo@kerjaya.my")){u.push({id:1,name:"Demo Student",email:"demo@kerjaya.my",pw:await hash("demo1234"),created:Date.now()});await this.save(u)}},
+ async login(em,pw){const u=(await this.all()).find(x=>x.email===em);if(!u||u.pw!==await hash(pw))throw new Error("e6");return u},
+ async register(name,em,pw){const all=await this.all();if(all.some(x=>x.email===em))throw new Error("e5");const u={id:Date.now(),name,email:em,pw:await hash(pw),created:Date.now()};all.push(u);await this.save(all);return u},
+ async byId(id){return(await this.all()).find(x=>x.id===id)||null}
+};
+let sess=null,amode="in";
+const setSess=u=>{sess={id:u.id,name:u.name,email:u.email};st.set(SSK,JSON.stringify(sess))};
+const clearSess=()=>{sess=null;st.del(SSK)};
+function greet(){const o=$("#lo");o.textContent=at("out");o.hidden=false;o.onclick=()=>{clearSess();amode="in";login();scrollTo(0,0)};return `<div class="hi">${at("hi")(sess.name.split(" ")[0])}</div>`}
+function fld(id,type,label,ac){return `<label class="fld"><span>${label}</span><div><input id="${id}" type="${type}" autocomplete="${ac}" ${type==="password"?'minlength="6"':""}>${type==="password"&&id==="pw"?`<button type="button" class="eye" id="eye">${at("sh")}</button>`:""}</div></label>`}
+function login(){
+ scr="l";$("#lo").hidden=true;const a=AT[L],reg=amode==="up";
+ app.innerHTML=`<section class="hero"><h1 class="wm" aria-label="${tr("h1")}"><span class="ly back" aria-hidden="true">${wlayer(false)}</span><span class="ly front" aria-hidden="true">${wlayer(true)}</span></h1>
+ <div class="scene auth"><h2>${reg?a.reg:a.wel}</h2><p class="asub">${reg?a.rsub:a.sub}</p>
+ <form id="af" novalidate>${reg?fld("nm","text",a.nm,"name"):""}${fld("em","email",a.em,"email")}${fld("pw","password",a.pw,reg?"new-password":"current-password")}${reg?fld("pw2","password",a.pw2,"new-password"):""}<div class="err" id="er" role="alert"></div><button class="btn" id="sub" type="submit">${reg?a.su:a.li}</button></form>
+ <button class="link" id="sw" type="button">${reg?a.ti:a.tu}</button>${reg?"":`<button class="ghost" id="dm" type="button">${a.demo}</button><p class="hint">demo@kerjaya.my · demo1234</p>`}<p class="hint">${a.note}</p></div></section>`;
+ $(".front").addEventListener("pointerover",e=>{const l=e.target.closest("i");if(l)hop(l.dataset.n)});
+ $("#sw").onclick=()=>{amode=reg?"in":"up";login()};
+ $("#eye").onclick=()=>{const f=$("#pw"),h=f.type==="password";f.type=h?"text":"password";$("#eye").textContent=h?a.hd:a.sh};
+ const go=async(em,pw,nm)=>{const er=$("#er"),b=$("#sub");er.textContent="";b.disabled=true;b.textContent=a.ld;
+  try{const u=await(reg?DB.register(nm,em,pw):DB.login(em,pw));setSess(u);home();scrollTo(0,0)}
+  catch(x){er.textContent=a[x.message]||a.e6;b.disabled=false;b.textContent=reg?a.su:a.li}};
+ $("#af").onsubmit=e=>{e.preventDefault();const em=$("#em").value.trim().toLowerCase(),pw=$("#pw").value,nm=reg?$("#nm").value.trim():"",er=$("#er");
+  if(!em||!pw||(reg&&(!nm||!$("#pw2").value)))return er.textContent=a.e1;
+  if(!/^\S+@\S+\.\S+$/.test(em))return er.textContent=a.e2;
+  if(reg){if(pw.length<6)return er.textContent=a.e3;if(pw!==$("#pw2").value)return er.textContent=a.e4}
+  go(em,pw,nm)};
+ const dm=$("#dm");if(dm)dm.onclick=()=>{$("#em").value="demo@kerjaya.my";$("#pw").value="demo1234";$("#af").requestSubmit()};
+}
+async function boot(){
+ app.innerHTML="";await DB.seed();
+ try{const s=JSON.parse(st.get(SSK)||"null");if(s&&await DB.byId(s.id)){sess=s;return home()}}catch(e){}
+ clearSess();login();
+}
+$("#lg").onclick=()=>{L=L==="ms"?"en":"ms";apply();if(scr==="h")home();else if(scr==="r")result();else if(scr==="l")login();else{quest();if(ans[i])pick(ans[i].k)}};
+apply();boot();
 </script>
 </body>
 </html>
