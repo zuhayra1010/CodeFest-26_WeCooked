@@ -6,7 +6,7 @@
 
 ## KerjayaQuest Website Link
 
-[(https://zuhayra1010.github.io/We_Cooked_Education_and_Human_Development/)](https://zuhayra1010.github.io/We_Cooked_Education_and_Human_Development/)
+[https://zuhayra1010.github.io/We_Cooked_Education_and_Human_Development/](https://zuhayra1010.github.io/We_Cooked_Education_and_Human_Development/)
 
 ## About the Project
 
